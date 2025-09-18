@@ -62,7 +62,7 @@ Key outputs and deliverables:
 
 ---
 
-## 👩‍🚀 Team Datanova
+## Team Datanova
 
 * **Kamayani Rai** – Applied Analytics & Machine Learning
 * **Kundana Rasi Tadikonda** – Analytics Engineering & Visualization
