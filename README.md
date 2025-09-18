@@ -31,7 +31,7 @@ We combined **geospatial analytics, machine learning, and real-time alerts** to 
   - Medium Risk: 55 satellites  
   - Low Risk: 4955 satellites  
 - **Forecasting:** LSTM achieved accurate position predictions (x, y, z) across epochs.  
-- **Alerts:** Generated explainable notifications with risk + confidence scores.  
+- **Alerts:** Generated explainable notifications with risk
 
 ![alerts](images/i6.png)  
 
