@@ -1,96 +1,80 @@
-# OrbitShield: AI-Driven Space Debris Management  
-*Women in Data Datathon 2025 – Team Datanova*  
+# OrbitShield 🚀  
+**AI-Driven Space Debris Collision Risk Management**  
+*Built at Women in Data Datathon 2025 by Team Datanova*  
 
-## Project Overview  
-OrbitShield is a predictive analytics platform developed during the **Women in Data 2025 Datathon** to enhance **Space Situational Awareness (SSA)**. The project addresses the growing challenge of **orbital debris in Low Earth Orbit (LEO)** by combining geospatial clustering, machine learning forecasting, and explainable alerts to proactively identify and mitigate collision risks.
-
----
-
-## Problem Statement  
-- Increasing debris density in LEO poses severe threats to satellites, missions, and space sustainability.
-- Existing mitigation strategies are **reactive**, experimental, and lack scalability.  
-- No integrated predictive system exists today that prioritises risks and translates them into **actionable intelligence**. 
+![Team](images/i5.png)  
 
 ---
 
-## Proposed Solution – OrbitShield  
-**OrbitShield** is an **AI-driven orbital safety system** designed to:  
-- Automate **orbital dataset ingestion and fusion** (~845K records, 228 unique objects)  
-- Apply **geospatial clustering (DBSCAN)** to detect debris-dense zones
-- Forecast collision probabilities with **Random Forest, XGBoost, and LSTM** models
-- Generate **human-readable alerts** (via LLMs) for satellite operators  
-- Deliver insights via an **interactive Streamlit/Dash dashboard** with real-time trajectories, risks, and alerts
----
+## Overview  
+Space isn’t as empty as it looks. Thousands of satellites and millions of debris fragments orbit Earth, and one wrong trajectory could trigger a chain reaction of collisions.  
 
-## Methodology & Approach  
-
-### 1. Data Extraction & Fusion  
-- Collected datasets: Ephemeris, State Vectors, ELSETS, Object Metadata
-- Standardized schema → `object_id, epoch, x, y, z, vx, vy, vz`  
-- Consolidated into a single dataset for clustering & forecasting.  
-
-### 2. Geospatial Analysis  
-- Converted orbital positions into **3D ECI coordinates**.  
-- **DBSCAN clustering** identified 7 debris clusters.  
-- Classified satellites into **High (45), Medium (55), Low (4955)** risk levels
-
-### 3. Machine Learning Modeling  
-- Engineered features: altitude bands, velocity, cluster density.  
-- Models trained: **Random Forest, XGBoost, LSTM**.  
-- Outputs: collision probabilities + trajectory forecasts
-
-### 4. Forecasting & Alerts  
-- Generated predictive warnings such as:  
-  *“Satellite Alpha is projected to pass within 3 km of debris cluster Zeta in 72 hours. Risk Score = 0.84.”* 
-- Alerts explainable and prioritized by **velocity, mass, mission criticality**.  
-
-### 5. Visualization Dashboard  
-- Interactive dashboard with:  
-  - 3D orbital cluster maps  
-  - Risk monitoring panel  
-  - Collision warnings and countdowns  
-  - Predictive path projections 
+**OrbitShield** is our attempt to make space situational awareness **predictive, explainable, and actionable**.  
+We combined **geospatial analytics, machine learning, and real-time alerts** to identify collision risks and make orbital safety more transparent.  
 
 ---
 
-## Results & Key Insights  
-- **7 orbital clusters** identified, with clear danger vs safe zones.  
-- **Collision probability forecasts** aligned with observed risk trends.  
-- Dashboard provided a **transparent, scalable** way to monitor orbital safety.  
-- **OrbitShield uniqueness:** first to combine **clustering + ML forecasting + explainable alerts** into one solution,
+## Key Features  
+- **Data Fusion:** Pulled and consolidated **845K+ orbital records** via REST APIs (Ephemeris, State Vectors, Metadata).  
+- **Geospatial Analysis:** DBSCAN clustering on orbital trajectories to detect debris-dense regions.  
+- **ML Forecasting:** Random Forest, XGBoost, and LSTM models to predict collision risks and future positions.  
+- **Human-Centric Alerts:** WhatsApp alerts with plain-English warnings instead of raw risk scores.  
+- **Visualization:** Interactive dashboard showing orbital clusters, risks, and trajectory forecasts.  
 
 ---
 
-## Tech Stack  
-- **ETL & Workflow:** Python (Pandas, NumPy), Apache Airflow, PostgreSQL + PostGIS
-- **Modeling:** Scikit-learn (RF/XGBoost), TensorFlow/Keras (LSTM)
-- **Clustering & Geospatial:** DBSCAN, PostGIS, Plotly
-- **Visualization:** PowerBi
-- **Alerts:** Rule-based LLMs 
+## Metrics & Results  
+- **Dataset size:** 845K records | 228 unique objects  
+- **Clusters identified:** 7 orbital debris clusters  
+- **Risk classification:**  
+  - High Risk: 45 satellites  
+  - Medium Risk: 55 satellites  
+  - Low Risk: 4955 satellites  
+- **Forecasting:** LSTM achieved accurate position predictions (x, y, z) across epochs.  
+- **Alerts:** Generated explainable notifications with risk + confidence scores.  
+
+![alerts](images/i6.png)  
 
 ---
 
-## Team Datanova (Women in Data 2025)  
-- **Kamayani Rai** – Applied Analytics & ML  
-- **Kundana Rasi Tadikonda** – Analytics Engineering & Visualization  
-- **Julia Davis** – Industrial Engineering & Visualization  
-- **Kimberley Gillette** – Data Science & ML
+## Tech Stack
+
+* **Data Pipeline:** Python (Pandas, NumPy), REST APIs
+* **Database & GIS:** PostgreSQL + PostGIS
+* **Clustering:** DBSCAN (scikit-learn)
+* **Modeling:** Scikit-learn (RF, XGBoost), TensorFlow/Keras (LSTM)
+* **Visualization:** Plotly,PowerBi
+* **Alerts:** WhatsApp API, HuggingFace Transformers
+  
+---
+
+## Visuals & Dashboards
+
+Key outputs and deliverables:
+
+![Overview](images/i1.png)  
+
+![collison risk](images/i2.png)  
+
+![collison risk](images/i3.png) 
+
+![collison risk](images/i4.png) 
 
 ---
 
-## Deliverables  
-- Consolidated Dataset (`consolidated_orbital_data.csv`)  
-- Geospatial Analysis Notebook (`GeoSpatial_Analysis.ipynb`)
-- ML Predictions (`XGBoostPredictions.csv`, `LSTMPredictions.csv`)
-- Dashboard Prototype (Streamlit/Dash)
-- Final Presentation & Documentation
+## 👩‍🚀 Team Datanova
+
+* **Kamayani Rai** – Applied Analytics & Machine Learning
+* **Kundana Rasi Tadikonda** – Analytics Engineering & Visualization
+* **Julia Davis** – Industrial Engineering & Visualization
+* **Kimberley Gillette** – Data Science & Machine Learning
 
 ---
 
-## Future Scope  
-- Real-time integration with live orbital feeds.  
-- Reinforcement learning for maneuver recommendations.  
-- Public dashboard layer for policy, education, and sustainability  
+## Future Scope
+
+* Real-time integration with live orbital feeds.
+* Reinforcement learning for automated maneuver recommendations.
+* Public-facing dashboard for policy makers, educators, and global transparency.
 
 ---
-
